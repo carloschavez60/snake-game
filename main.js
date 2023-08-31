@@ -12,16 +12,8 @@ const game = {
   score: 0,
   frameDuration: 0,
   isOver: false,
-<<<<<<< HEAD
   mainLoopIsRunning: false,
   maxScore: 0,
-=======
-  mainLoopisRunning: false,
-<<<<<<< HEAD
->>>>>>> 70090c4 (first commit)
-=======
-  maxScore: 0,
->>>>>>> 4e6b22c (added max score)
 }
 
 // 2. Entities
@@ -29,11 +21,7 @@ const game = {
 const snake = {
   position: [{ x: 0, y: 0 }],
   direction: '',
-<<<<<<< HEAD
   hasEatenFood: false,
-=======
-  hasEatingFood: false,
->>>>>>> 70090c4 (first commit)
 }
 
 const food = {
@@ -77,11 +65,7 @@ function checkCollisions() {
     game.score++
     game.frameDuration -= 2
 
-<<<<<<< HEAD
     snake.hasEatenFood = true
-=======
-    snake.hasEatingFood = true
->>>>>>> 70090c4 (first commit)
 
     food.position = {
       x: generateRandomPosition(),
@@ -122,11 +106,7 @@ function snakeIsEatingItself() {
 // 3.3. Physcis System
 
 function moveSnake() {
-<<<<<<< HEAD
   if (snake.hasEatenFood) {
-=======
-  if (snake.hasEatingFood) {
->>>>>>> 70090c4 (first commit)
     snake.position.push({})
   }
 
@@ -151,11 +131,7 @@ function moveSnake() {
   snake.position.unshift(newHead)
   snake.position.pop()
 
-<<<<<<< HEAD
   snake.hasEatenFood = false
-=======
-  snake.hasEatingFood = false
->>>>>>> 70090c4 (first commit)
 }
 
 // 3.4. Draw System
@@ -202,23 +178,11 @@ function drawSnake() {
 function drawScore() {
   ctx.fillStyle = 'white'
   ctx.font = '20px Arial'
-<<<<<<< HEAD
-<<<<<<< HEAD
   ctx.fillText(`Score: ${game.score} | Max Score: ${game.maxScore}`, GAME_SPACE_WIDTH/2 - 100, GAME_PIXEL_WIDTH)
 }
 
 function drawGameOver() {
   ctx.fillStyle = 'white'
-=======
-  ctx.fillText(`Score: ${game.score}`, GAME_SPACE_WIDTH/2 - 50, GAME_PIXEL_WIDTH)
-=======
-  ctx.fillText(`Score: ${game.score} | Max Score: ${game.maxScore}`, GAME_SPACE_WIDTH/2 - 100, GAME_PIXEL_WIDTH)
->>>>>>> 4e6b22c (added max score)
-}
-
-function drawGameOver() {
-  ctx.fillStyle = 'black'
->>>>>>> 70090c4 (first commit)
   ctx.font = '20px Arial'
   ctx.fillText('Game Over', GAME_SPACE_WIDTH/2 - 50, GAME_SPACE_WIDTH/2)
 }
@@ -232,14 +196,11 @@ function generateRandomPosition() {
 // 4. Set initial game state
 
 function setInitialGameState() {
-<<<<<<< HEAD
   // set max score
   if (game.score > game.maxScore) {
     game.maxScore = game.score
   }
 
-=======
->>>>>>> 70090c4 (first commit)
   // set initial state of game variables
   game.score = 0
   game.frameDuration = 100
@@ -248,11 +209,7 @@ function setInitialGameState() {
   // set initial state of entities
   snake.position = [{ x: GAME_SPACE_WIDTH/2, y: GAME_SPACE_WIDTH/2 }]
   snake.direction = 'right'
-<<<<<<< HEAD
   snake.hasEatenFood = false
-=======
-  snake.hasEatingFood = false
->>>>>>> 70090c4 (first commit)
 
   food.position = {
     x: generateRandomPosition(),
@@ -260,15 +217,9 @@ function setInitialGameState() {
   }
 
   // call first main loop
-<<<<<<< HEAD
   if (!game.mainLoopIsRunning) {
     mainLoop()
     game.mainLoopIsRunning = true
-=======
-  if (!game.mainLoopisRunning) {
-    mainLoop()
-    game.mainLoopisRunning = true
->>>>>>> 70090c4 (first commit)
   }
 }
 
@@ -278,19 +229,7 @@ function mainLoop() {
   // 5.1. check if game is over
   if (game.isOver === true) {
     drawGameOver()
-<<<<<<< HEAD
-<<<<<<< HEAD
     game.mainLoopIsRunning = false
-=======
-=======
-
-    if (game.score > game.maxScore) {
-      game.maxScore = game.score
-    }
-
->>>>>>> 4e6b22c (added max score)
-    game.mainLoopisRunning = false
->>>>>>> 70090c4 (first commit)
     return
   }
 
