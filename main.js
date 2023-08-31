@@ -17,7 +17,11 @@ const game = {
   maxScore: 0,
 =======
   mainLoopisRunning: false,
+<<<<<<< HEAD
 >>>>>>> 70090c4 (first commit)
+=======
+  maxScore: 0,
+>>>>>>> 4e6b22c (added max score)
 }
 
 // 2. Entities
@@ -199,6 +203,7 @@ function drawScore() {
   ctx.fillStyle = 'white'
   ctx.font = '20px Arial'
 <<<<<<< HEAD
+<<<<<<< HEAD
   ctx.fillText(`Score: ${game.score} | Max Score: ${game.maxScore}`, GAME_SPACE_WIDTH/2 - 100, GAME_PIXEL_WIDTH)
 }
 
@@ -206,6 +211,9 @@ function drawGameOver() {
   ctx.fillStyle = 'white'
 =======
   ctx.fillText(`Score: ${game.score}`, GAME_SPACE_WIDTH/2 - 50, GAME_PIXEL_WIDTH)
+=======
+  ctx.fillText(`Score: ${game.score} | Max Score: ${game.maxScore}`, GAME_SPACE_WIDTH/2 - 100, GAME_PIXEL_WIDTH)
+>>>>>>> 4e6b22c (added max score)
 }
 
 function drawGameOver() {
@@ -271,8 +279,16 @@ function mainLoop() {
   if (game.isOver === true) {
     drawGameOver()
 <<<<<<< HEAD
+<<<<<<< HEAD
     game.mainLoopIsRunning = false
 =======
+=======
+
+    if (game.score > game.maxScore) {
+      game.maxScore = game.score
+    }
+
+>>>>>>> 4e6b22c (added max score)
     game.mainLoopisRunning = false
 >>>>>>> 70090c4 (first commit)
     return
