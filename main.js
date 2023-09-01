@@ -182,7 +182,7 @@ function drawScore() {
 }
 
 function drawGameOver() {
-  ctx.fillStyle = 'black'
+  ctx.fillStyle = 'white'
   ctx.font = '20px Arial'
   ctx.fillText('Game Over', GAME_SPACE_WIDTH/2 - 50, GAME_SPACE_WIDTH/2)
 }
